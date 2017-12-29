@@ -1,0 +1,27 @@
+<h1>{{people.apellidos | uppercase }} </h1>
+
+<hr>
+  <div class="row">
+      <div class="col-md-4">
+        <img [src]="people.img" class="img-fluid" [alt]="people.nombre">
+        <br><br>
+        <a [routerLink]= "['/Peoples']" class="btn btn-outline-danger btn-block"> Regresar </a>
+      </div>
+
+      <div class="col-md-8">
+        <h3>{{people.nombre }}</h3>
+        <hr>
+        <p>{{people.categoria}}</p>
+      </div>
+  </div>
+
+  <div class="row animated fadeIn fast">
+      <div class="col-md-4"></div>
+      <div class="col-md-8">
+        <div align="center">
+          <!--<img src="assets/img/{{people.casa}}.png" alt="" class="img-fluid">-->
+          <img *ngIf="people.casa =='Marvel'" src="assets/img/Marvel.png" alt="" class="img-fluid">
+          <img *ngIf="people.casa =='DC'"  src="assets/img/DC.png" alt="" class="img-fluid">
+        </div>
+      </div>
+  </div>

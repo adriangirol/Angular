@@ -1,0 +1,8 @@
+.showMore{
+  font-size: 14px;
+  opacity: 1;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: .3s all ease;
+
+}

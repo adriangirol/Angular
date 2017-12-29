@@ -1,0 +1,48 @@
+<br><br>
+<div *ngIf="control.flash == 0"class="alert alert-success animated fadeIn fast" [@myAnimation] style="font-size: 14px;
+  opacity: 1;
+  cursor: pointer;
+  transition: .3s all ease;" role="alert">
+    Guardado Correctamente.
+</div>
+<div *ngIf="control.flash == 1" class="alert alert-danger animated fadeIn fast" [@myAnimation] role="alert">
+  <ul class="list-group">
+      <li *ngFor="let error of control.errorDescription; let i = index" class="list-group-item"> {{ i + 1 }}. {{ error }}</li>
+  </ul>
+</div>
+<div class="card text-white bg-dark mb-3 animated fadeIn fast">
+  <div class="card-header">
+  <h5>  New People </h5>
+  </div>
+  <div class="card-body">
+      <div class="form-row">
+         <div class="col">
+           <label for="nombre">Nombre</label>
+           <input type="text" class="form-control col-md-8" placeholder="Nombre..." [(ngModel)]="people.nombre">
+         </div>
+       <div class="col">
+         <label for="nombre">Apellidos</label>
+         <input type="text" class="form-control col-md-8" placeholder="Apellidos..." [(ngModel)]="people.apellidos">
+       </div>
+     </div>
+     <hr>
+     <div class="form-group">
+       <div class="form-row">
+         <div class="col">
+           <label for="sexo">Sexo</label>
+           <select class="form-control col-md-8" id="sexo" required [(ngModel)]="people.sexo" name="sexo">
+             <option *ngFor="let sexo of sexos" [value]="sexo">{{sexo}}</option>
+           </select>
+         </div>
+        <div class="col">
+          <label for="categoria">Categoria</label>
+          <select class="form-control col-md-8" id="categoria" required [(ngModel)]="people.categoria" name="categoria">
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+     <hr>
+    <a class="btn btn-primary" (click) = "setNewPeople()">Save</a>
+  </div>
+</div>
